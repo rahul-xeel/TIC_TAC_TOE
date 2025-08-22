@@ -15,8 +15,11 @@ function App() {
 
     <Footer />
 
-    
 
+    {/* ************************ */}
+
+
+      <div id='Blur'></div>
 
 
 

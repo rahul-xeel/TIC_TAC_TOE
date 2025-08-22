@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import './Body.css';
 
+
+
 function Body() {
+
+  
 
   const [resultDeclare, setResultDeclare] = useState(false);
 
@@ -17,6 +21,7 @@ function Body() {
     } else {
       COMPUTER_TAKING_CHANCE();
     }
+      document.querySelector('#Blur').style.display = 'none';
 
     Result_check();
   }
@@ -34,7 +39,14 @@ function Body() {
     setResultDeclare(false);
   }
 
+
+
+
+
   function USERCHANCE(id) {
+
+
+    document.querySelector('#Blur').style.display = 'flex';
     document.querySelector('#' + id).style.display = 'flex';
 
     const gameOver = Result_check(); 
@@ -45,6 +57,10 @@ function Body() {
       }, 1000);
     }
   }
+
+
+
+
 
   function Result_check() {
     const wins = [
