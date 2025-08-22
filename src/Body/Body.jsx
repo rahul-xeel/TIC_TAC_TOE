@@ -28,6 +28,7 @@ function Body() {
 
   function RESTART() {
 
+     document.querySelector('#Blur').style.display = 'none';
      document.querySelector('#box').style.display = "flex";
      document.querySelector('#loss_box').style.display = "none";
      document.querySelector('#Win_box').style.display = "none";
@@ -46,10 +47,24 @@ function Body() {
   function USERCHANCE(id) {
 
 
-    document.querySelector('#Blur').style.display = 'flex';
-    document.querySelector('#' + id).style.display = 'flex';
+    if(document.querySelector('#cross_' + id).style.display == 'flex')
+      {
+        return;
+      }
+     
+
+    if(document.querySelector('#circle_' + id).style.display == 'none')
+      {
+          document.querySelector('#cross_' + id).style.display = 'flex';
+           document.querySelector('#Blur').style.display = 'flex';
+
+
+
 
     const gameOver = Result_check(); 
+
+
+
 
     if (!gameOver) {
       setTimeout(() => {
@@ -57,6 +72,12 @@ function Body() {
       }, 1000);
     }
   }
+
+
+      }
+
+  
+    
 
 
 
@@ -111,7 +132,7 @@ function Body() {
          <div id="loss_box" style={{display:"none"}}>YOU LOSS!!!</div>
         <div id="box">
           <div id="box_p_1">
-            <div id="box_p_1_1" onClick={() => USERCHANCE('cross_1')}>
+            <div id="box_p_1_1" onClick={() => USERCHANCE('1')}>
               <div id="cross_1" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -120,7 +141,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_1_2"></div>
-            <div id="box_p_1_3" onClick={() => USERCHANCE('cross_2')}>
+            <div id="box_p_1_3" onClick={() => USERCHANCE('2')}>
               <div id="cross_2" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -129,7 +150,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_1_4"></div>
-            <div id="box_p_1_5" onClick={() => USERCHANCE('cross_3')}>
+            <div id="box_p_1_5" onClick={() => USERCHANCE('3')}>
               <div id="cross_3" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -140,7 +161,7 @@ function Body() {
           </div>
           <div id="box_p_2"></div>
           <div id="box_p_3">
-            <div id="box_p_3_1" onClick={() => USERCHANCE('cross_4')}>
+            <div id="box_p_3_1" onClick={() => USERCHANCE('4')}>
               <div id="cross_4" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -149,7 +170,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_3_2"></div>
-            <div id="box_p_3_3" onClick={() => USERCHANCE('cross_5')}>
+            <div id="box_p_3_3" onClick={() => USERCHANCE('5')}>
               <div id="cross_5" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -158,7 +179,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_3_4"></div>
-            <div id="box_p_3_5" onClick={() => USERCHANCE('cross_6')}>
+            <div id="box_p_3_5" onClick={() => USERCHANCE('6')}>
               <div id="cross_6" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -169,7 +190,7 @@ function Body() {
           </div>
           <div id="box_p_4"></div>
           <div id="box_p_5">
-            <div id="box_p_5_1" onClick={() => USERCHANCE('cross_7')}>
+            <div id="box_p_5_1" onClick={() => USERCHANCE('7')}>
               <div id="cross_7" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -178,7 +199,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_5_2"></div>
-            <div id="box_p_5_3" onClick={() => USERCHANCE('cross_8')}>
+            <div id="box_p_5_3" onClick={() => USERCHANCE('8')}>
               <div id="cross_8" className="cross" style={{ display: 'none' }}>
                 X
               </div>
@@ -187,7 +208,7 @@ function Body() {
               </div>
             </div>
             <div id="box_p_5_4"></div>
-            <div id="box_p_5_5" onClick={() => USERCHANCE('cross_9')}>
+            <div id="box_p_5_5" onClick={() => USERCHANCE('9')}>
               <div id="cross_9" className="cross" style={{ display: 'none' }}>
                 X
               </div>
